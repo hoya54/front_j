@@ -9,7 +9,7 @@ import RoomList from "./RoomList";
 import ChatList from "./ChatList";
 import { etcActions, getChatRoomList } from "../../store/etc";
 
-const chatServerUrl = "https://i8a803.p.ssafy.io/api/chat";
+const chatServerUrl = "https://i8a803.p.ssafy.io";
 const Chat = () => {
   const dispatch = useDispatch();
   const { id, email, role, name, image } = useSelector((state) => state.auth);
@@ -125,7 +125,7 @@ const Chat = () => {
         writer: name,
         content: event.target["0"].value,
       };
-      stompClient.current.send("/receive", {}, JSON.stringify(msg));
+      stompClient.current.send("/api/chat/receive", {}, JSON.stringify(msg));
     }
   }
 
