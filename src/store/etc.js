@@ -214,7 +214,7 @@ export const getChatRoom =
     dispatch(etcActions.dataRequest());
     try {
       const response = await axios.get(
-        "/channel/" +
+        "/api/chat/channel/" +
           (myRole === "user"
             ? `${targetId}/${myId}/${targetName}/${myName}`
             : `${myId}/${targetId}/${myName}/${targetName}`)
@@ -233,7 +233,7 @@ export const getChatRoomList = (id, role) => async (dispatch) => {
     console.log("나의 아이디, 역할", id, role);
 
     const response = await axios.get(
-      `/load/list/${id}/${role === "trainer" ? "TRAINER" : "USER"}`
+      `/api/chat/load/list/${id}/${role === "trainer" ? "TRAINER" : "USER"}`
     );
     console.log(response);
     dispatch(etcActions.dataSuccess());
@@ -247,7 +247,7 @@ export const getChatRoomList = (id, role) => async (dispatch) => {
 export const getChatList = (channelId) => async (dispatch) => {
   dispatch(etcActions.dataRequest());
   try {
-    const response = await axios.get(`/load/${channelId}`);
+    const response = await axios.get(`/api/chat/load/${channelId}`);
     dispatch(etcActions.dataSuccess());
     return response.data;
   } catch (error) {
