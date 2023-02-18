@@ -10,6 +10,7 @@ import ChatList from "./ChatList";
 import { etcActions, getChatRoomList } from "../../store/etc";
 
 const chatServerUrl = "/api/chat";
+// const chatServerUrl = "http://localhost:8005/api/chat";
 const Chat = () => {
   const dispatch = useDispatch();
   const { id, email, role, name, image } = useSelector((state) => state.auth);
@@ -127,7 +128,7 @@ const Chat = () => {
         writer: name,
         content: event.target["0"].value,
       };
-      stompClient.current.send("/receive", {}, JSON.stringify(msg));
+      stompClient.current.send("/api/chat/receive", {}, JSON.stringify(msg));
       console.log("채팅전송 다음줄");
     }
   }
