@@ -125,7 +125,7 @@ const Chat = () => {
         writer: name,
         content: event.target["0"].value,
       };
-      stompClient.current.send("receive", {}, JSON.stringify(msg));
+      stompClient.current.send("/receive", {}, JSON.stringify(msg));
     }
   }
 
