@@ -9,7 +9,7 @@ import RoomList from "./RoomList";
 import ChatList from "./ChatList";
 import { etcActions, getChatRoomList } from "../../store/etc";
 
-const chatServerUrl = "https://i8a803.p.ssafy.io";
+const chatServerUrl = "/api/chat";
 const Chat = () => {
   const dispatch = useDispatch();
   const { id, email, role, name, image } = useSelector((state) => state.auth);
@@ -40,7 +40,9 @@ const Chat = () => {
         disconnect_socket_server();
       }
     } else {
-      socket.current = new SockJS(chatServerUrl);
+      socket.current = new SockJS(chatServerUrl, null, {
+        transports: ["websocket", "xhr-streaming", "xhr-polling"],
+      });
       stompClient.current = Stomp.over(socket.current);
       connect_socket_server();
     }
