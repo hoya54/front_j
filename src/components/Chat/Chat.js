@@ -9,7 +9,7 @@ import RoomList from "./RoomList";
 import ChatList from "./ChatList";
 import { etcActions, getChatRoomList } from "../../store/etc";
 
-const chatServerUrl = "https://i8a803.p.ssafy.io/api/chat";
+const chatServerUrl = "wss://i8a803.p.ssafy.io/api/chat";
 const Chat = () => {
   const dispatch = useDispatch();
   const { id, email, role, name, image } = useSelector((state) => state.auth);
