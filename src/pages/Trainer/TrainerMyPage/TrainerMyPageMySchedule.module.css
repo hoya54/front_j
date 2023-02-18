@@ -1,0 +1,107 @@
+.container{
+    font-family: 'DungGeunMo';
+    display: flex;
+    flex-flow: column;
+    gap:10px;
+    width: 680px;
+}
+
+.bigtxt {
+    font-size: 32px;
+    color: #ececec;
+    padding-bottom: 15px;
+}
+
+.smtxt{
+    font-size: 16px;
+    color: #ececec;
+    margin-bottom: 15px;
+}
+
+.out_box{
+    display: flex;
+    flex-flow: column;
+    width: 680px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 10px 20px;
+    background-color: #2c2c2c;
+    border: 1px solid #ececec;
+    border-radius: 7px;
+    align-items:center;
+    gap:20px;   
+    justify-content: space-between;
+}
+
+.in_box {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    color: #111111;
+    font-size: 20px;
+    border-radius: 7px;
+    background-color: #ececec;
+    padding: 20px;
+}
+
+.time_table {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    color: #111111;
+    font-size: 20px;
+    border-radius: 7px;
+    background-color: whitesmoke;
+    padding: 15px;
+}
+
+.table_text{
+    width: 10%;
+    height: 80%;
+}
+
+.times_box{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    justify-items: center;
+}
+
+.time{
+    width: 90%;
+    font-size: 16px;
+    color: #ececec;
+    border-radius: 5px;
+    background-color: rgb(45, 45, 45);
+    padding:3px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.clicked_time {
+    background-color: #a1cd48e6;
+}
+
+.prevent_clicked_time {
+    cursor: default !important;
+    background-color: #989898 !important;
+}
+
+.edit{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    color: #ececec;
+    text-align: right;
+    cursor: pointer;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20px;
+    width: 100%;
+}
+
+.edit_img{
+    height: 20px;
+    width: 20px;
+}
