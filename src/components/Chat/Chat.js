@@ -127,11 +127,8 @@ const Chat = () => {
         writer: name,
         content: event.target["0"].value,
       };
-      stompClient.current.send(
-        "https://i8a803.p.ssafy.io/api/chat/receive",
-        {},
-        JSON.stringify(msg)
-      );
+      stompClient.current.send("/receive", {}, JSON.stringify(msg));
+      console.log("채팅전송 다음줄");
     }
   }
 
